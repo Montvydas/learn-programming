@@ -1,2 +1,3 @@
-# learn-programming
-This repo is about learning different programming concepts, such as dynamic programming, neural networks etc.
+# Let's Learn Programming...
+
+Well, to be honest, let's learn slightly more fun stuff such as implementing a neural network from scratch in python or how to create dynamic programming solutions to various problems!
