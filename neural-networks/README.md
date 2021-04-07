@@ -1,0 +1,3 @@
+# Reference
+
+The reference material for the most basic single neuron neural network can be found on [youtube video](https://www.youtube.com/watch?v=kft1AJ9WVDk&t=709s). However that video didn't include the bias input, without which logical gates would not have worked. I included this input after initially reading [part 1](https://medium.com/analytics-vidhya/implementing-logic-gates-using-neural-networks-part-1-f8c0d3c48332) of the article about implementing logical gates in neural network and then [part 2](https://towardsdatascience.com/implementing-logic-gates-using-neural-networks-part-2-b284cc159fce) for slightly more advances logical gates. Note XOR required deeper network, since it is non-linear system.
