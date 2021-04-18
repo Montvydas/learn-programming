@@ -20,7 +20,7 @@ def fib_memo(n, memo = None):
     return memo[n]
 
 def fib_tab(n):
-    # +1 due to starting from 0
+    # init table: +1 due to starting from 0
     table = [0] * (n + 1)
     table[1] = 1
     

@@ -24,7 +24,7 @@ def travel_grid_memo(n, m, memo = None):
     return memo[key]
 
 def travel_grid_tab(cols, rows):
-    # +1 because index is equal to numbers of cols/rows
+    # init table: +1 because index is equal to numbers of cols/rows
     table = [[0 for i in range(cols + 1)] for j in range(rows + 1)]
     table[1][1] = 1
     for row in range(rows + 1):

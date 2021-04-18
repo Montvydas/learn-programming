@@ -14,7 +14,7 @@ def can_construct(target, words):
     
     return False
 
-def can_construct_memo(target, words, memo = {}):
+def can_construct_memo(target, words, memo = None):
     if memo is None:
         memo = {}
     if target in memo:
@@ -35,7 +35,7 @@ def can_construct_tab(target, words):
     pass
 
 if __name__ == '__main__':
-    samples = [("skateboard", ("sk", "rd", "boa", "ate")), ("eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeef", ("e", "ee", "eee", "eeee"))]
+    samples = [('skateboard', ('sk', 'rd', 'boa', 'ate')), ('eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeef', ('e', 'ee', 'eee', 'eeee'))]
     for num in samples:
         print(f'can_construct{num} == {can_construct(*num)})')
         print('can_construct_cache{} took {:.6f} sec'.format(num, timeit(lambda: can_construct(*num), number=1)))
