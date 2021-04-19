@@ -29,11 +29,24 @@ def can_sum_memo(target_sum, numbers, memo = None):
     memo[target_sum] = False
     return False
 
-def can_sum_tab(target_sum, numbers, memo = None):
-    pass
+def can_sum_tab(target_sum, numbers):
+    # init table: +1 due to starting from 0
+    table = [False] * (target_sum + 1)
+    table[0] = True
+    
+    for i in range(target_sum + 1):
+        # only update possible variations
+        if table[i] == False:
+            continue
+
+        for n in numbers:
+            next_possible = i + n
+            if next_possible < target_sum + 1:
+                table[next_possible] = True
+    return table[target_sum]
 
 if __name__ == '__main__':
-    samples = [(8, (1, 2, 4)), (50, (1, 2, 4)), (100, (1, 2, 4, 25)), (300, (5, 3, 4, 7))]
+    samples = [(8, (1, 2, 4)), (50, (1, 2, 4)), (99, (32, 18, 6)), (300, (7, 14))]
     for num in samples:
         print(f'can_sum{num} == {can_sum(*num)})')
         print('can_sum_cache{} took {:.6f} sec'.format(num, timeit(lambda: can_sum(*num), number=1)))

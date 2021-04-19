@@ -37,7 +37,20 @@ def how_sum_memo(target_sum, numbers, memo = None):
     return None
 
 def how_sum_tab(target_sum, numbers):
-    pass
+    # init table: +1 due to starting from 0
+    table = [None] * (target_sum + 1)
+    table[0] = []
+    
+    for i in range(target_sum + 1):
+        # only update possible variations
+        if table[i] is None:
+            continue
+        
+        for n in numbers:
+            next_possible = i + n
+            if next_possible <= target_sum: # do not overflow the table
+                table[next_possible] = table[i] + [n]
+    return table[target_sum]
 
 if __name__ == '__main__':
     samples = [(8, (1, 2, 4)), (50, (1, 2, 4)), (100, (1, 2, 4, 25)), (300, (5, 3, 4, 7))]
